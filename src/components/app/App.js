@@ -2,6 +2,7 @@ import React from 'react';
 import Styles from './App.module.css';
 import SearchBar from '../SearchBar/SearchBar.js';
 import SearchResults from '../SearchResults/SearchResults.js';
+import Playlist from '../Playlist/Playlists.js';
 
 export default function App () {
   return (
@@ -14,7 +15,7 @@ export default function App () {
       
       <div className={Styles.App_playlist}>
         <SearchResults />
-        {/* <!-- Add a Playlist component --> */}
+        <Playlist />
       </div>
     </div>
   </div>
