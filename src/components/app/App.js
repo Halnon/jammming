@@ -1,6 +1,6 @@
 import React from 'react';
 import Styles from './App.module.css';
-import { SearchBar } from '../SearchBar/SearchBar.js';
+import SearchBar from '../SearchBar/SearchBar.js';
 
 export default function App () {
   return (
