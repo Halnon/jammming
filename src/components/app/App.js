@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.module.css';
+import Styles from './App.module.css';
 import { SearchBar } from '../SearchBar/SearchBar.js';
 
 class App extends React.Component {
@@ -7,12 +7,12 @@ class App extends React.Component {
     return (
       <div>
         <h1>
-          Ja<span className="highlight">mmm</span>ing
+          Ja<span className={Styles.highlight}>mmm</span>ing
         </h1>
-      <div className="App">
+      <div className={Styles.App}>
         <SearchBar />
         
-        <div className="App-playlist">
+        <div className={Styles.App_playlist}>
           {/* <!-- Add a SearchResults component --> */}
           {/* <!-- Add a Playlist component --> */}
         </div>
