@@ -1,10 +1,11 @@
 import React from "react";
-import Styles from './SearchResults.module.css'
+import Styles from './SearchResults.module.css';
+import TrackList from '../TrackList/TrackList.js'
 
 export default function SearchResults () {
     return (
         <div className={Styles.SearchResults}>
-        {/* <!-- Add a TrackList component --> */}
+        <TrackList />
       </div>
     );
 }
