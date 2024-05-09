@@ -1,8 +1,9 @@
 import React from "react";
+import Styles from './Track.module.css'
 
 export default function Track () {
     return (
-      <div className="Track">
+      <div className={Styles.Track}>
         <div className="Track-information">
           {/* <h3><!-- track name will go here --></h3> */}
           
