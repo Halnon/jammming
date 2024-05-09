@@ -1,6 +1,7 @@
 import React from 'react';
 import Styles from './App.module.css';
 import SearchBar from '../SearchBar/SearchBar.js';
+import SearchResults from '../SearchResults/SearchResults.js';
 
 export default function App () {
   return (
@@ -12,7 +13,7 @@ export default function App () {
       <SearchBar />
       
       <div className={Styles.App_playlist}>
-        {/* <!-- Add a SearchResults component --> */}
+        <SearchResults />
         {/* <!-- Add a Playlist component --> */}
       </div>
     </div>
