@@ -21,6 +21,9 @@ export default function App () {
     }]
   );
 
+  const [playlistName, setPlaylistName] = useState('Example playlist');
+  const [playlistTracks, setPlaylistTracks] = useState('Example playlist tracks'); 
+
   return (
     <div>
       <h1>
@@ -31,7 +34,7 @@ export default function App () {
       
       <div className={Styles.App_playlist}>
         <SearchResults userSearchResults={searchResults}/>
-        <Playlist />
+        <Playlist playlistName={playlistName} playlistTracks={playlistTracks} />
       </div>
     </div>
   </div>
