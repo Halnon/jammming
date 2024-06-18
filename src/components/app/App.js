@@ -37,6 +37,17 @@ export default function App () {
     }]
   ); 
 
+  function addTrack(track) {
+    const existingTrack = playlistTracks.find((t) => t.id === track.id)
+    const newTrack = playlistTracks.concat(track)
+
+    if (!existingTrack) {
+      setPlaylistTracks(newTrack)
+    } else {
+      console.log('Track already exsits!')
+    }
+  };
+
   return (
     <div>
       <h1>
