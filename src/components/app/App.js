@@ -21,8 +21,21 @@ export default function App () {
     }]
   );
 
-  const [playlistName, setPlaylistName] = useState('Example playlist');
-  const [playlistTracks, setPlaylistTracks] = useState('Example playlist tracks'); 
+  const [playlistName, setPlaylistName] = useState('Example playlist name');
+  const [playlistTracks, setPlaylistTracks] = useState([
+    {
+      name: 'example playlist name 1', 
+      artist: 'example playlist artist 1', 
+      album: 'example playlist album 1',
+      id: 1
+    },
+    {
+      name: 'example playlist name 2', 
+      artist: 'example playlist artist 2', 
+      album: 'example playlist album 2',
+      id: 2
+    }]
+  ); 
 
   return (
     <div>
