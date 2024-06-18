@@ -57,7 +57,7 @@ export default function App () {
       <SearchBar />
       
       <div className={Styles.App_playlist}>
-        <SearchResults userSearchResults={searchResults}/>
+        <SearchResults userSearchResults={searchResults} onAdd={addTrack} />
         <Playlist playlistName={playlistName} playlistTracks={playlistTracks} />
       </div>
     </div>
