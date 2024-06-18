@@ -30,7 +30,7 @@ export default function App () {
       <SearchBar />
       
       <div className={Styles.App_playlist}>
-        <SearchResults />
+        <SearchResults userSearchResults={searchResults}/>
         <Playlist />
       </div>
     </div>
