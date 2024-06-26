@@ -6,7 +6,7 @@ export default function Track (props) {
     if (props.isRemoval) {
       return <button className={Styles.Track_action}>-</button>
     } else {
-      return <button className={Styles.Track_action}>-</button>
+      return <button className={Styles.Track_action}>+</button>
     }
   }
 
@@ -16,7 +16,7 @@ export default function Track (props) {
         {<h3>{props.track.name}</h3>}
         {<p>{props.track.artist} | {props.track.album}</p>}
       </div>
-      {/* <button class="Track-action"><!-- + or - will go here --></button> */}
+      {/* <button class="Track-action"><!-- + or - will go here --></button> */ renderAction()}
     </div>
   );
 }
