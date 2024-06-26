@@ -41,10 +41,10 @@ export default function App () {
     const existingTrack = playlistTracks.find((t) => t.id === track.id)
     const newTrack = playlistTracks.concat(track)
 
-    if (!existingTrack) {
-      setPlaylistTracks(newTrack)
-    } else {
+    if (existingTrack) {
       console.log('Track already exsits!')
+    } else {
+      setPlaylistTracks(newTrack)
     }
   };
 
