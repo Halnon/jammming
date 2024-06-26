@@ -10,6 +10,10 @@ export default function Track (props) {
     }
   }
 
+  function passTrack() {
+    props.onAdd(props.track)
+  }
+
   return (
     <div className={Styles.Track}>
       <div className={Styles.Track_information}>
