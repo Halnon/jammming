@@ -3,14 +3,11 @@ import Styles from './Track.module.css'
 
 export default function Track (props) {
   function renderAction() {
-    return (
-      <button 
-      className={Styles.Track_action}
-      onClick={passTrack}
-      >
-        {props.isRemoval ? '-' : '+'}
-      </button>
-    )
+    if (props.isRemoval) {
+      return <button className={Styles.Track_action} onClick={passTrack}>+</button>
+    } else {
+      return <button className={Styles.Track_action}>-</button>
+    }
   }
 
   function passTrack() {
