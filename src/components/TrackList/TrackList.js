@@ -11,7 +11,7 @@ export default function Tracklist (props) {
               key={track.id} 
               isRemoval={props.isRemoval} 
               onAdd={props.onAdd}
-              onRemoval={props.onRemoval} 
+              onRemove={props.onRemove} 
               />
           ))}
       </div>
