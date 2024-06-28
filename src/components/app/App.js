@@ -18,6 +18,12 @@ export default function App () {
       artist: 'example artist name 2', 
       album: 'example album name 2',
       id: 2
+    },
+    {
+      name: 'example track name 3', 
+      artist: 'example artist name 3', 
+      album: 'example album name 3',
+      id: 3
     }]
   );
 
