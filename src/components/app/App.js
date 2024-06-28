@@ -56,7 +56,7 @@ export default function App () {
 
   function removeTrack(track) {
     const existingTrack = playlistTracks.filter((t) => t.id !== track.id)
-    setPlaylistName(existingTrack)
+    setPlaylistTracks(existingTrack)
   };
 
   return (
