@@ -10,7 +10,8 @@ export default function Tracklist (props) {
               track={track} 
               key={track.id} 
               isRemoval={props.isRemoval} 
-              onAdd={props.onAdd} 
+              onAdd={props.onAdd}
+              onRemoval={props.onRemoval} 
               />
           ))}
       </div>
