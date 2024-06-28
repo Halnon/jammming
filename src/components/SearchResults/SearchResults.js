@@ -5,7 +5,7 @@ import TrackList from '../TrackList/TrackList.js'
 export default function SearchResults (props) {
     return (
         <div className={Styles.SearchResults}>
-        <TrackList userSearchResults={props.userSearchResults} isRemoval={true} onAdd={props.onAdd} />
+        <TrackList userSearchResults={props.userSearchResults} isRemoval={false} onAdd={props.onAdd} />
       </div>
     );
 }
