@@ -54,6 +54,11 @@ export default function App () {
     }
   };
 
+  function removeTrack(track) {
+    const existingTrack = playlistTracks.filter((t) => t.id !== track.id)
+    setPlaylistName(existingTrack)
+  };
+
   return (
     <div>
       <h1>
@@ -64,7 +69,7 @@ export default function App () {
       
       <div className={Styles.App_playlist}>
         <SearchResults userSearchResults={searchResults} onAdd={addTrack} />
-        <Playlist playlistName={playlistName} playlistTracks={playlistTracks} />
+        <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} />
       </div>
     </div>
   </div>
