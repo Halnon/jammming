@@ -59,6 +59,10 @@ export default function App () {
     setPlaylistTracks(existingTrack)
   };
 
+  function updatePlaylistName(name) {
+    setPlaylistName(name)
+  };
+
   return (
     <div>
       <h1>
