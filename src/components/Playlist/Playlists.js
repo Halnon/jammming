@@ -19,7 +19,10 @@ export default function Playlist(props) {
         onRemove={props.onRemove} 
         isRemoval={true} 
       />
-      <button className={Styles.Playlist_save}>
+      <button 
+        className={Styles.Playlist_save}
+        onClick={props.onSave}
+      >
         SAVE TO SPOTIFY
       </button>
     </div>
