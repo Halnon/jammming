@@ -72,8 +72,16 @@ export default function App () {
       <SearchBar />
       
       <div className={Styles.App_playlist}>
-        <SearchResults userSearchResults={searchResults} onAdd={addTrack} />
-        <Playlist playlistName={playlistName} playlistTracks={playlistTracks} onRemove={removeTrack} />
+        <SearchResults 
+          userSearchResults={searchResults} 
+          onAdd={addTrack} 
+        />
+        <Playlist 
+          playlistName={playlistName} 
+          playlistTracks={playlistTracks} 
+          onRemove={removeTrack} 
+          onNameChange={updatePlaylistName}
+        />
       </div>
     </div>
   </div>
