@@ -63,6 +63,10 @@ export default function App () {
     setPlaylistName(name)
   };
 
+  function savePlaylist() {
+    const trackURIs = playlistTracks.map((t) => t.uri);
+  };
+
   return (
     <div>
       <h1>
@@ -81,6 +85,7 @@ export default function App () {
           playlistTracks={playlistTracks} 
           onRemove={removeTrack} 
           onNameChange={updatePlaylistName}
+          onSave={savePlaylist}
         />
       </div>
     </div>
