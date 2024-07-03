@@ -8,6 +8,10 @@ export default function SearchBar(props) {
         props.onSearch(term);
     };
 
+    function handleTermChange({target}) {
+        setTerm(target.value);
+    };
+
     return (
         <div className={Styles.SearchBar}>
             <input placeholder="Enter A Song, Album, or Artist"/>
