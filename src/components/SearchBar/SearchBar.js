@@ -14,8 +14,14 @@ export default function SearchBar(props) {
 
     return (
         <div className={Styles.SearchBar}>
-            <input placeholder="Enter A Song, Album, or Artist"/>
-            <button className={Styles.SearchButton}>SEARCH</button>
+            <input 
+                placeholder="Enter A Song, Album, or Artist"
+                onChange={handleTermChange}
+            />
+            <button 
+                className={Styles.SearchButton}
+                onClick={passTerm}
+            >SEARCH</button>
         </div>
     )
 }
