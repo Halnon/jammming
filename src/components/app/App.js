@@ -67,13 +67,20 @@ export default function App () {
     const trackURIs = playlistTracks.map((t) => t.uri);
   };
 
+  function search(term) {
+    console.log(term);
+
+  };
+
   return (
     <div>
       <h1>
         Ja<span className={Styles.highlight}>mmm</span>ing
       </h1>
     <div className={Styles.App}>
-      <SearchBar />
+      <SearchBar 
+        onSearch={search}
+      />
       
       <div className={Styles.App_playlist}>
         <SearchResults 
