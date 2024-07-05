@@ -34,20 +34,20 @@ const Spotify = {
             method: 'GET',
             headers: {Authorization: `bearer ${accessToken}`},
         })
-        .then(response => response.json())
-        .then(jsonResponse => {
+        .then((response) => response.json())
+        .then((jsonResponse) => {
             if (!jsonResponse) {
                 console.log('Response error');
             }
-            return jsonResponse.tracks.items.map(track => ({
-                id: track.id,
-                name: track.name,
-                artist: track.artists[0].name,
-                album: track.album.name,
-                uri: track.uri,
+            return jsonResponse.tracks.items.map(t => ({
+                id: t.id,
+                name: t.name,
+                artist: t.artists[0].name,
+                album: t.album.name,
+                uri: t.uri,
             }));
         })
     }
 };
 
-export {Spotify};
+export { Spotify };
