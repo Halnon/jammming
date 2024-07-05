@@ -26,6 +26,14 @@ const Spotify = {
         //check for access token if first and second check are both false
         const redirect = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
         window.location = redirect;
+    },
+
+    search(term) {
+        accessToken = Spotify.getAccessToken();
+        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+            method: 'GET',
+            headers: {Authorization: `bearer ${accessToken}`},
+        })
     }
 };
 
