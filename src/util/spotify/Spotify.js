@@ -1,4 +1,6 @@
 let accessToken;
+const clientId = "0d782445da2e4039bdd0c39959ea2f95";
+const redirectURI = "http://localhost:3000";
 
 const Spotify = {
     getAccessToken() {
@@ -20,6 +22,10 @@ const Spotify = {
             window.history.pushState("Access token", null, "/");
             return accessToken;
         }
+
+        //check for access token if first and second check are both false
+        const redirect = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
+        window.location = redirect;
     }
 };
 
