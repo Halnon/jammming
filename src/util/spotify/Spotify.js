@@ -47,6 +47,16 @@ const Spotify = {
                 uri: t.uri,
             }));
         })
+    },
+
+    savePlaylist(name, trackUris) {
+        if (!name || !trackUris) return;
+
+        const aToken = Spotify.getAccessToken();
+        const headers = {
+            Authorization: `Bearer ${aToken}`
+        };
+        let userID;        
     }
 };
 
