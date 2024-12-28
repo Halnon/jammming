@@ -1,6 +1,6 @@
 let accessToken;
-const clientId = "0d782445da2e4039bdd0c39959ea2f95";
-const redirectURI = "http://localhost:3000";
+const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
+const redirectURI = "https://adam-halnon-jammming.netlify.app/";
 
 const Spotify = {
     getAccessToken() {
@@ -35,13 +35,13 @@ const Spotify = {
             headers: { Authorization: `Bearer ${accessToken}` },
         })
             .then((response) => {
-                console.log(response)
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 return response.json();
             })
             .then((jsonResponse) => {
+                console.log(jsonResponse)
                 if (!jsonResponse.tracks) {
                     return [];
                 }
