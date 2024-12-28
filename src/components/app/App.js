@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Styles from './App.module.css';
 import SearchBar from '../SearchBar/SearchBar.js';
 import SearchResults from '../SearchResults/SearchResults.js';
@@ -45,6 +45,10 @@ export default function App () {
       // }
     ]
   ); 
+
+  useEffect(() => {
+    Spotify.getAccessToken(); //authenticate as soon as the app loads
+  }, []);
 
   function addTrack(track) {
     const existingTrack = playlistTracks.find((t) => t.id === track.id)
