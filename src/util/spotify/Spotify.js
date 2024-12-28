@@ -1,6 +1,6 @@
 let accessToken;
-const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-const redirectURI = "https://adam-halnon-jammming.netlify.app/";
+const clientId = process.env.REACT_APP_SPOTIFY_CLIENT_ID;//change back to actual access toeken value for local env
+const redirectURI = "https://adam-halnon-jammming.netlify.app/";//change back to http://localhost:3000 for local env
 
 const Spotify = {
     getAccessToken() {
