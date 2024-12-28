@@ -3,6 +3,7 @@ import Styles from './App.module.css';
 import SearchBar from '../SearchBar/SearchBar.js';
 import SearchResults from '../SearchResults/SearchResults.js';
 import Playlist from '../Playlist/Playlists.js';
+import Modal from '../Modal/Modal';
 import {Spotify} from '../../util/spotify/Spotify.js';
 
 export default function App () {
@@ -46,6 +47,9 @@ export default function App () {
     ]
   ); 
 
+  const [modalIsOpen, setModalIsOpen] = useState(false); //modal visibility state
+  const [modalMessage, setModalMessage] = useState('');  //modal message
+
   useEffect(() => {
     Spotify.getAccessToken(); //authenticate as soon as the app loads
   }, []);
@@ -72,11 +76,22 @@ export default function App () {
 
   function savePlaylist() {
     const trackURIs = playlistTracks.map((t) => t.uri);
-    Spotify.savePlaylist(playlistName, trackURIs).then(() => {
-      setPlaylistName("New Playlist");
-      setPlaylistTracks([]);
-    })
-  };
+    Spotify.savePlaylist(playlistName, trackURIs)
+      .then(() => {
+        setModalMessage("Playlist saved to Spotify!");
+        setModalIsOpen(true); //open the modal
+        setPlaylistName("New Playlist");
+        setPlaylistTracks([]);
+      })
+      .catch((error) => {
+        setModalMessage("Error saving playlist: " + error.message);
+        setModalIsOpen(true); //open the modal on error
+      });
+  }
+
+  function closeModal() {
+    setModalIsOpen(false); //close the modal
+  }
 
   function search(term) {
     Spotify.search(term).then((result) => setSearchResults(result));
@@ -108,6 +123,8 @@ export default function App () {
         />
       </div>
     </div>
+    {/* conditionally render the modal */}
+    {modalIsOpen && <Modal message={modalMessage} onClose={closeModal} />}
   </div>
   );
 }
